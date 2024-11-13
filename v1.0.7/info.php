@@ -13,7 +13,7 @@
         <h1>Bem-vindo ao Sistema de Cadastro do Banco de Sangue de Taquaritinga!</h1><br>
         <h3>Esta é a página informacional do sistema, onde existem informações que você deve se certificar antes de iniciar a doação.</h3><br>
 
-        <h2>Requisitos de Elegibilidade:</h2><br>
+        <h2>Requisitos de Elegibilidade: abuble</h2><br>
         <ul class="instrucao">
             <li>Idade: O doador deve ter entre 16 e 69 anos, se for menor de idade, poderá doar aos 16 acompanhado dos responsáveis.</li>
             <li>Peso: O peso mínimo é de 50kg</li>
