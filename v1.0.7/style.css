@@ -1,0 +1,425 @@
+/* Estilos gerais */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilização do cabeçalho (nav) */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #a4161a;
+    z-index: 1000;
+    position: static;
+    top: 0;
+}
+
+.icones {
+    font-size: 28px;
+    position: relative;
+    top: 5px;  
+}
+
+/* Ajustes do logo */
+.logo {
+    width: 175px;
+    margin-left: 20vh;
+}
+
+/* Ajustes da navbar-nav para centralizar apenas os links */
+.navbar-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: 20%;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+/* Ajustes nos links de navegação */
+.nav-link {
+    padding-right: 10px;
+    margin-right: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* Efeito de hover nos links da navbar - desce ao passar o mouse */
+.nav-link:hover {
+    text-decoration: none;
+    color: #090909;
+    transform: translateY(5px); /* Move o link para baixo quando o mouse passa por cima */
+}
+
+/* Estilização do menu suspenso (dropdown) */
+.nav-item.dropdown {
+    position: relative;
+}
+
+/* Aplicando o efeito de hover ao link "DOADOR" dentro do dropdown */
+.nav-item.dropdown:hover .nav-link {
+    color: #090909;
+    transform: translateY(5px); /* Move o link para baixo */
+    transition: transform 0.3s, color 0.3s;
+}
+
+/* Menu dropdown (menu suspenso) */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Posiciona o menu logo abaixo do item do dropdown */
+    left: 0;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 180px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(5px); /* Inicialmente o menu está deslocado para baixo */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Mostrar o dropdown com efeito suave */
+.nav-item.dropdown.show .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0px); /* Move o menu para a posição final */
+}
+
+/* Garantir que o link "DOADOR" também tenha o efeito de hover */
+.nav-item.dropdown:hover {
+    text-decoration: none;
+    color: #090909;
+    transform: translateY(5px); /* Move o link para baixo */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilização do item do menu dropdown */
+.dropdown-item {
+    padding: 8px 15px;
+    margin: 0;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de hover nos itens do menu dropdown */
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+    transform: translateY(5px); /* Move o item para baixo ao passar o mouse */
+}
+
+/* Estilização do rodapé (footer) */
+footer {
+    background-color: #161A1D;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: static;
+    margin-top: 18%;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+}
+
+footer a{
+    color: white;
+}
+
+/* Estilo do container principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+/* Estilo do título */
+#titulo {
+    text-align: center;
+}
+
+/* Outros estilos... */
+
+/* Estilos do formulário */
+.form-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.column {
+    flex: 1 1 30%;
+    margin: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Estilo para os campos do formulário */
+.input-field,
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.required{
+    color: red;
+    font-weight: bold;
+}
+
+/* Ajuste para a última linha (Data da Doação e Botão) */
+.row:last-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row:last-child .column {
+    flex: 1 1 48%;
+    margin-right: 10px;
+}
+
+/* Estilo para o botão de envio */
+button[type="submit"] {
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo da tabela */
+.table {
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos para botões adicionais */
+.btn-success {
+    color: white;
+    background-color: #28a745;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #dc3545;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btnlimp {
+    margin-left: 10px;
+    color: white;
+    background-color: #106cfc;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 37px;
+}
+
+.btnlimp:hover {
+    background-color: #094cb8;
+}
+
+/* Estilo para botões específicos */
+#edit, #enviar {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#edit {
+    background-color: #4CAF50;
+}
+
+#enviar {
+    background-color: #4CAF50;
+}
+
+#edit:hover, #enviar:hover {
+    background-color: #45a049;
+}
+
+.contenthelp,
+.contentform,
+.contenthome {
+    font-size: 20px;
+}
+
+/**********começo 04/11**************************/
+.dashboard {
+    text-align: center;
+    margin: -10px;
+    padding: 20px;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+.blood-stock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.blood-type {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 120px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.blood-type h3 {
+    margin-top: 0;
+}
+
+.alert {
+    background-color: #ffe5e5;
+    border: 1px solid #ff6666;
+}
+
+.regular {
+    background-color: rgba(0, 255, 0, 0.2);
+    border: 1px solid #4CAF50;
+}
+
+.warning {
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.blood-type:hover {
+    transform: scale(1.05);
+}
+
+.donor-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.donor-info th, .donor-info td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.donor-info th {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
+
+.donor-info td {
+    background-color: #f9f9f9;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.donor-info tr:nth-child(even) td {
+    background-color: #f1f1f1;
+}
+
+.donor-info tr:hover td {
+    background-color: #e9f7fc;
+}
+
+#no-data-message {
+    font-size: 16px;
+    color: #e74c3c;
+    text-align: center;
+    font-weight: bold;
+}
+
+#error-message {
+    font-size: 16px;
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: center;
+}
+
+#titledonnor{
+    text-align: center;
+    font-size: 20px;
+}
+
+#dashboardh2{
+    margin-top: 8%;
+}
+
+.path{
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+.ast{
+    color: red;
+}
