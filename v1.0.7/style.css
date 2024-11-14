@@ -213,6 +213,7 @@ button[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
     width: auto;
+    margin-left: 92%;
     margin-top: 10px;
 }
 
@@ -416,8 +417,20 @@ button[type="submit"]:hover {
 }
 
 .path{
-    text-align: center;
+    text-align: left;
+    margin-left: 14%;
     text-decoration-line: underline;
+}
+ 
+.path2{
+    text-align: left;
+    margin-left: -117%;
+    text-decoration-line: underline;
+}
+ 
+.path3{
+    text-align: left;
+    text-decoration: underline;
 }
 
 .ast{
