@@ -1,4 +1,4 @@
-<h1 class="path" style="text-align: center;">Listar Doadores</h1>
+<h1 class="path2" style="text-align: center;">Listar Doadores</h1>
 <br>
 
 <div class="search-container" style="display: flex; justify-content: center;">
