@@ -19,6 +19,10 @@ nav {
     top: 0;
 }
 
+.red{
+    color: #a4161a;
+}
+
 .icones {
     font-size: 28px;
     position: relative;
@@ -120,7 +124,8 @@ nav {
 /* Efeito de hover nos itens do menu dropdown */
 .dropdown-item:hover {
     color: black;
-    background-color: #d15559;
+    background-color: #efa4a6a6;
+    
     transform: translateY(5px); /* Move o item para baixo ao passar o mouse */
 }
 
