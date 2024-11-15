@@ -19,14 +19,14 @@ nav {
     top: 0;
 }
 
-.red{
+.red {
     color: #a4161a;
 }
 
 .icones {
     font-size: 28px;
     position: relative;
-    top: 5px;  
+    top: 5px;
 }
 
 /* Ajustes do logo */
@@ -68,13 +68,6 @@ nav {
     position: relative;
 }
 
-/* Aplicando o efeito de hover ao link "DOADOR" dentro do dropdown */
-.nav-item.dropdown:hover .nav-link {
-    color: #090909;
-    transform: translateY(5px); /* Move o link para baixo */
-    transition: transform 0.3s, color 0.3s;
-}
-
 /* Menu dropdown (menu suspenso) */
 .dropdown-menu {
     position: absolute;
@@ -101,14 +94,6 @@ nav {
     transform: translateY(0px); /* Move o menu para a posição final */
 }
 
-/* Garantir que o link "DOADOR" também tenha o efeito de hover */
-.nav-item.dropdown:hover {
-    text-decoration: none;
-    color: #090909;
-    transform: translateY(5px); /* Move o link para baixo */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
 /* Estilização do item do menu dropdown */
 .dropdown-item {
     padding: 8px 15px;
@@ -125,25 +110,101 @@ nav {
 .dropdown-item:hover {
     color: black;
     background-color: #efa4a6a6;
-    
     transform: translateY(5px); /* Move o item para baixo ao passar o mouse */
 }
 
-/* Estilização do rodapé (footer) */
 footer {
-    background-color: #161A1D;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    position: static;
-    margin-top: 18%;
-    bottom: 0;
-    width: 100%;
-    clear: both;
+    background-color: #161A1D; /* Fundo escuro */
+    color: #FFFFFF; /* Texto branco */
+    padding: 30px 0; /* Aumenta o espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Ocupa toda a largura */
+    font-family: 'Arial', sans-serif; /* Fonte */
+    font-size: 16px; /* Tamanho do texto no rodapé */
 }
 
-footer a{
-    color: white;
+.container {
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 20px; /* Espaçamento lateral */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row; /* Alinha os itens na horizontal */
+    justify-content: space-between; /* Espaça os itens igualmente */
+    align-items: center; /* Alinha as seções verticalmente ao centro */
+    gap: 30px; /* Espaçamento entre as colunas */
+}
+
+.footer-content p {
+    margin: 5px 0; /* Espaçamento vertical entre os parágrafos */
+}
+
+.footer-contact {
+    margin-top: 2%; /* Adiciona margem superior para descer a coluna */
+}
+
+/* Estilo para as seções de Endereço e Contato */
+.footer-contact p, .footer-address p {
+    display: block; /* Exibe como bloco */
+    text-align: left; /* Alinha o texto à esquerda */
+    margin: 5px 0; /* Espaçamento entre os parágrafos */
+    font-size: 16px
+}
+
+.footer-address p:first-of-type {
+    font-weight: bold; /* Negrito para o título "Endereço:" */
+}
+
+/* Estilo para os ícones */
+.footer-contact i, .footer-address i {
+    font-size: 18px; /* Tamanho dos ícones */
+    color: #FF6B6B; /* Cor dos ícones */
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+}
+
+.footer-link {
+    color: #FF6B6B; /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 14px;
+    font-weight: bold; /* Texto em negrito */
+    transition: color 0.3s ease; /* Transição ao passar o mouse */
+}
+
+.footer-link:hover {
+    color: #FFD166; /* Cor ao passar o mouse */
+}
+
+footer p {
+    margin: 0; /* Remove as margens padrão dos parágrafos. */
+    font-size: 16px; /* Define o tamanho do texto como 14px para legibilidade. */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas para uma leitura confortável. */
+}
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 767px) {
+    .footer-content {
+        flex-direction: column; /* Organiza o conteúdo em coluna no celular */
+        gap: 20px; /* Aumenta o espaçamento entre os itens */
+    }
+
+    footer p {
+        font-size: 14px; /* Mantém o tamanho da fonte pequeno para leitura em telas pequenas */
+        margin: 0 10px; /* Margem lateral para garantir que o texto não grude nas bordas */
+    }
+}
+
+/* Estilo para dispositivos maiores (desktop) */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row; /* Alinha os itens horizontalmente em desktops */
+        justify-content: space-between; /* Distribui os itens igualmente */
+    }
+
+    footer p {
+        margin: 0 10px; /* Adiciona espaço horizontal entre os parágrafos no layout de desktop */
+    }
 }
 
 /* Estilo do container principal */
@@ -315,6 +376,10 @@ button[type="submit"]:hover {
     font-size: 20px;
 }
 
+.content{
+    margin-bottom: 10%;
+}
+
 /**********começo 04/11**************************/
 .dashboard {
     text-align: center;
@@ -424,18 +489,17 @@ button[type="submit"]:hover {
 
 .path{
     text-align: left;
+    text-decoration-line: underline;
+}
+#path2{
     margin-left: 14%;
     text-decoration-line: underline;
-}
+
+ }
  
-.path2{
+#path3{
     text-align: left;
     margin-left: -117%;
-    text-decoration-line: underline;
-}
- 
-.path3{
-    text-align: left;
     text-decoration: underline;
 }
 

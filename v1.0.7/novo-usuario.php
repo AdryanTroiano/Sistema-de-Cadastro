@@ -9,8 +9,7 @@
 <body>
 
     <div class="container">
-        <h1 class="path">Cadastrar Doadores</h1>
-        <br>
+        <h1 id="path2">Cadastrar Doadores</h1>
         <form action="?page=salvar" method="POST">
             <input type="hidden" name="acao" value="cadastrar">
             <div class="contentform">
