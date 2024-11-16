@@ -113,99 +113,109 @@ nav {
     transform: translateY(5px); /* Move o item para baixo ao passar o mouse */
 }
 
+/* Estilo geral do rodapé */
 footer {
     background-color: #161A1D; /* Fundo escuro */
     color: #FFFFFF; /* Texto branco */
-    padding: 30px 0; /* Aumenta o espaçamento interno */
+    margin-top: 6%; /* Espaço acima do rodapé */
+    padding: 30px 0; /* Espaçamento interno */
     text-align: center; /* Centraliza o texto */
     width: 100%; /* Ocupa toda a largura */
     font-family: 'Arial', sans-serif; /* Fonte */
-    font-size: 16px; /* Tamanho do texto no rodapé */
+    font-size: 16px; /* Tamanho do texto */
 }
 
+/* Configuração do container */
 .container {
     max-width: 1200px; /* Largura máxima do container */
     margin: 0 auto; /* Centraliza o container */
     padding: 0 20px; /* Espaçamento lateral */
 }
 
+/* Estilo do conteúdo principal do rodapé */
 .footer-content {
-    display: flex;
-    flex-direction: row; /* Alinha os itens na horizontal */
-    justify-content: space-between; /* Espaça os itens igualmente */
-    align-items: center; /* Alinha as seções verticalmente ao centro */
-    gap: 30px; /* Espaçamento entre as colunas */
+    display: flex; /* Alinha os itens em linha */
+    flex-direction: row; /* Itens na horizontal */
+    justify-content: space-between; /* Espaça igualmente as colunas */
+    align-items: center; /* Centraliza os itens verticalmente */
+    gap: 30px; /* Espaçamento entre colunas */
 }
 
+/* Parágrafos no rodapé */
 .footer-content p {
-    margin: 5px 0; /* Espaçamento vertical entre os parágrafos */
-}
-
-.footer-contact {
-    margin-top: 2%; /* Adiciona margem superior para descer a coluna */
-}
-
-/* Estilo para as seções de Endereço e Contato */
-.footer-contact p, .footer-address p {
-    display: block; /* Exibe como bloco */
-    text-align: left; /* Alinha o texto à esquerda */
     margin: 5px 0; /* Espaçamento entre os parágrafos */
-    font-size: 16px
 }
 
+/* Seção de contato */
+.footer-contact {
+    margin-top: 2%; /* Margem superior */
+}
+
+/* Configuração das seções de endereço e contato */
+.footer-contact p, .footer-address p {
+    display: flex; /* Alinha o conteúdo horizontalmente */
+    align-items: center; /* Centraliza verticalmente ícones e texto */
+    margin: 5px 0; /* Espaçamento entre os parágrafos */
+    font-size: 16px; /* Tamanho do texto */
+}
+
+/* Título do endereço */
 .footer-address p:first-of-type {
-    font-weight: bold; /* Negrito para o título "Endereço:" */
+    font-weight: bold; /* Texto em negrito */
 }
 
-/* Estilo para os ícones */
+/* Estilo dos ícones */
 .footer-contact i, .footer-address i {
     font-size: 18px; /* Tamanho dos ícones */
     color: #FF6B6B; /* Cor dos ícones */
-    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    margin-right: 8px; /* Espaço entre ícone e texto */
 }
 
+/* Links no rodapé */
 .footer-link {
     color: #FF6B6B; /* Cor do link */
     text-decoration: none; /* Remove o sublinhado */
-    font-size: 14px;
+    font-size: 14px; /* Tamanho da fonte */
     font-weight: bold; /* Texto em negrito */
-    transition: color 0.3s ease; /* Transição ao passar o mouse */
+    transition: color 0.3s ease; /* Transição de cor */
 }
 
 .footer-link:hover {
     color: #FFD166; /* Cor ao passar o mouse */
 }
 
+/* Parágrafos gerais no rodapé */
 footer p {
-    margin: 0; /* Remove as margens padrão dos parágrafos. */
-    font-size: 16px; /* Define o tamanho do texto como 14px para legibilidade. */
-    line-height: 1.6; /* Aumenta o espaçamento entre linhas para uma leitura confortável. */
+    margin: 0; /* Remove margens padrão */
+    font-size: 16px; /* Tamanho do texto */
+    line-height: 1.6; /* Espaçamento entre linhas */
 }
 
-/* Estilo para dispositivos móveis */
+/* Estilo responsivo para dispositivos móveis */
 @media (max-width: 767px) {
     .footer-content {
-        flex-direction: column; /* Organiza o conteúdo em coluna no celular */
-        gap: 20px; /* Aumenta o espaçamento entre os itens */
+        flex-direction: column; /* Alinha em coluna */
+        gap: 20px; /* Aumenta espaçamento entre itens */
     }
 
     footer p {
-        font-size: 14px; /* Mantém o tamanho da fonte pequeno para leitura em telas pequenas */
-        margin: 0 10px; /* Margem lateral para garantir que o texto não grude nas bordas */
+        font-size: 14px; /* Tamanho menor para leitura em telas pequenas */
+        margin: 0 10px; /* Margem lateral */
     }
 }
 
 /* Estilo para dispositivos maiores (desktop) */
 @media (min-width: 768px) {
     .footer-content {
-        flex-direction: row; /* Alinha os itens horizontalmente em desktops */
-        justify-content: space-between; /* Distribui os itens igualmente */
+        flex-direction: row; /* Alinha em linha no desktop */
+        justify-content: space-between; /* Espaça as colunas igualmente */
     }
 
     footer p {
-        margin: 0 10px; /* Adiciona espaço horizontal entre os parágrafos no layout de desktop */
+        margin: 0 10px; /* Margem lateral */
     }
 }
+
 
 /* Estilo do container principal */
 .container {
@@ -372,12 +382,24 @@ button[type="submit"]:hover {
 
 .contenthelp,
 .contentform,
-.contenthome {
+.contenthome
+ {
     font-size: 20px;
 }
 
 .content{
     margin-bottom: 10%;
+}
+
+#contentmap{
+    font-size: 16px;
+    margin-top: 6%;
+}
+
+#contentmap ul {
+    margin-top: 30px; 
+    margin-bottom: 20px; 
+    padding-left: 20px; 
 }
 
 /**********começo 04/11**************************/
@@ -501,6 +523,12 @@ button[type="submit"]:hover {
     text-align: left;
     margin-left: -117%;
     text-decoration: underline;
+}
+
+#path4{
+    text-decoration: underline;
+    margin-left: 1%;
+    text-align: left;
 }
 
 .ast{

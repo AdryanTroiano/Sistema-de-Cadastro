@@ -74,6 +74,9 @@
                     case "listar2":
                         include("listar2.php");
                         break;
+                    case "mapa":
+                        include("mapa.php");
+                        break;
                     default:
                         include("dashboard.php");
                 }
@@ -86,7 +89,12 @@
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2024 Banco de Sangue de Taquaritinga. Todos os direitos reservados.</p>
-                
+                <!---------------Mapa de navegação----------->
+                <div class="footer-address">
+                <p><strong>Navegação:</strong></p>
+                <a href="?page=mapa" class="footer-link" target="_blank">Mapa de Navegação</a>
+                 <!---------------Fim do Mapa de navegação----------->
+                </div>
                 <!-- Seção Endereço com ícone e link -->
                 <div class="footer-address">
                     <p><strong>Endereço:</strong></p>
@@ -94,7 +102,8 @@
                         <i class="fas fa-map-marker-alt"></i> 
                         <a href="https://www.google.com.br/maps/place/R.+dos+Can%C3%A1rios,+341+-+Taquaritinga,+SP,+15900-000/@-21.3976807,-48.4936795,17z/data=!3m1!4b1!4m6!3m5!1s0x94b93947a011ca25:0x96c783fe4250946d!8m2!3d-21.3976857!4d-48.4911046!16s%2Fg%2F11w7q64gb7?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D" 
                         class="footer-link" target="_blank" rel="noopener noreferrer">
-                        Rua dos Canários, 341 - Taquaritinga - SP
+                        Rua dos Canários, 341<br>
+                        
                         </a>
                     </p>
                 </div>
