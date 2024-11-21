@@ -68,6 +68,11 @@ nav {
     position: relative;
 }
 
+.nav-item.dropdown:hover{
+    transform: translateY(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 /* Menu dropdown (menu suspenso) */
 .dropdown-menu {
     position: absolute;
@@ -137,8 +142,9 @@ footer {
     display: flex; /* Alinha os itens em linha */
     flex-direction: row; /* Itens na horizontal */
     justify-content: space-between; /* Espaça igualmente as colunas */
-    align-items: center; /* Centraliza os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens ao topo */
     gap: 30px; /* Espaçamento entre colunas */
+    text-align: left; /* Alinha o texto à esquerda */
 }
 
 /* Parágrafos no rodapé */
@@ -146,29 +152,35 @@ footer {
     margin: 5px 0; /* Espaçamento entre os parágrafos */
 }
 
-/* Seção de contato */
-.footer-contact {
-    margin-top: 2%; /* Margem superior */
+/* Configuração das seções de navegação, endereço e contato */
+.footer-address, .footer-contact {
+    flex: 1; /* Garante que as colunas tenham a mesma largura */
+    margin: 0; /* Remove margens extras */
 }
 
-/* Configuração das seções de endereço e contato */
-.footer-contact p, .footer-address p {
-    display: flex; /* Alinha o conteúdo horizontalmente */
-    align-items: center; /* Centraliza verticalmente ícones e texto */
+/* Ajuste nos parágrafos das seções */
+.footer-address p, .footer-contact p {
+    display: flex; /* Alinha ícone e texto na mesma linha */
+    align-items: center; /* Centraliza verticalmente ícone e texto */
     margin: 5px 0; /* Espaçamento entre os parágrafos */
     font-size: 16px; /* Tamanho do texto */
+    line-height: 1.5; /* Espaçamento entre linhas */
 }
 
-/* Título do endereço */
-.footer-address p:first-of-type {
-    font-weight: bold; /* Texto em negrito */
+/* Títulos (Navegação, Endereço, Contato) */
+.footer-address p:first-of-type, .footer-contact p:first-of-type {
+    display: block; /* Mantém o título em bloco */
+    font-weight: bold; /* Negrito */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+    text-align: left; /* Alinha o título à esquerda */
 }
 
 /* Estilo dos ícones */
 .footer-contact i, .footer-address i {
     font-size: 18px; /* Tamanho dos ícones */
     color: #FF6B6B; /* Cor dos ícones */
-    margin-right: 8px; /* Espaço entre ícone e texto */
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    flex-shrink: 0; /* Impede o redimensionamento do ícone */
 }
 
 /* Links no rodapé */
@@ -178,11 +190,14 @@ footer {
     font-size: 14px; /* Tamanho da fonte */
     font-weight: bold; /* Texto em negrito */
     transition: color 0.3s ease; /* Transição de cor */
+    display: block; /* Links em linha separados */
+    margin-bottom: 5px; /* Espaçamento entre os links */
 }
 
 .footer-link:hover {
     color: #FFD166; /* Cor ao passar o mouse */
 }
+
 
 /* Parágrafos gerais no rodapé */
 footer p {
@@ -215,6 +230,7 @@ footer p {
         margin: 0 10px; /* Margem lateral */
     }
 }
+
 
 
 /* Estilo do container principal */
