@@ -18,7 +18,7 @@
         <!-- Container da navbar (links) -->
         <div class="navbar-nav">
             <a class="nav-link" href="?page=info">
-                Informaçõesteste <ion-icon class="icones" name="information-circle-outline"></ion-icon>
+                Informações <ion-icon class="icones" name="information-circle-outline"></ion-icon>
             </a>
 
             <!-- Menu Doador com submenu -->
