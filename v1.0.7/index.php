@@ -94,11 +94,11 @@
                 <!---------------Mapa de navegação----------->
                 <div class="footer-address">
                 <p><strong>Navegação:</strong></p>
-                <a href="?page=info" class="footer-link" target="_blank">Informações</a>
-                <a href="?page=help" class="footer-link" target="_blank">Ajuda</a>
-                <a href="?page=novo" class="footer-link" target="_blank">Cadastrar</a>
-                <a href="?page=listar" class="footer-link" target="_blank">Listar Cadastros</a>
-                <a href="?page=listar2" class="footer-link" target="_blank">Informações Principais</a> 
+                <a href="?page=info" class="footer-link" target="_self">Informações</a>
+                <a href="?page=help" class="footer-link" target="_self">Ajuda</a>
+                <a href="?page=novo" class="footer-link" target="_self">Cadastrar</a>
+                <a href="?page=listar" class="footer-link" target="_self">Listar Cadastros</a>
+                <a href="?page=listar2" class="footer-link" target="_self">Informações Principais</a> 
                 
 
                  <!---------------Fim do Mapa de navegação----------->
