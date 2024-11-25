@@ -37,10 +37,6 @@
             <a class="nav-link" href="?page=help">
                 Ajuda <ion-icon class="icones" name="help-circle-outline"></ion-icon>
             </a>
-
-            <a class="nav-link" href="?page=editestoque">
-                teste <ion-icon class="icones" name="help-circle-outline"></ion-icon>
-            </a>
         </div>
     </nav>
 </header>

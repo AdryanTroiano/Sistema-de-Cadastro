@@ -1,8 +1,9 @@
 <?php
-include('config.php'); // Inclui a conexão com o banco de dados
-
-// Inicia a sessão para utilizar mensagens flash
+// Inicia a sessão
 session_start();
+
+// Inclui a conexão com o banco de dados
+include('config.php');
 
 // Verifica se foi enviado um formulário de edição
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -34,10 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['mensagem'] = 'Houve um erro ao editar o estoque.';
         $_SESSION['mensagem_tipo'] = 'error'; // Para aplicar estilos de erro
     }
-
-    // Redireciona para o dashboard
-    header("Location: ?page=dashboard");
-    exit(); // Evita que o código continue executando após o redirecionamento
 }
 
 // Consulta para buscar os tipos sanguíneos e suas respectivas quantidades
@@ -56,52 +53,49 @@ if ($cadastrosExistem) {
     echo "Nenhum cadastro encontrado.";
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Estoque de Sangue</title>
-    <style>
-        .success {
-            color: green;
-            font-weight: bold;
-        }
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-    </style>
+    <script>
+        // Função para exibir o alert
+        window.onload = function() {
+            <?php if (isset($_SESSION['mensagem'])): ?>
+                var tipo = "<?php echo $_SESSION['mensagem_tipo']; ?>";
+                var mensagem = "<?php echo $_SESSION['mensagem']; ?>";
+                alert(mensagem); // Exibe o alert com a mensagem
+                <?php 
+                    // Limpa a mensagem após exibir
+                    unset($_SESSION['mensagem']);
+                    unset($_SESSION['mensagem_tipo']);
+                ?>
+            <?php endif; ?>
+        };
+    </script>
 </head>
 <body>
-    <h1>Editar Estoque de Sangue</h1>
-
-    <!-- Exibe a mensagem de sucesso ou erro -->
-    <?php if (isset($_SESSION['mensagem'])): ?>
-        <p class="<?php echo $_SESSION['mensagem_tipo']; ?>">
-            <?php echo $_SESSION['mensagem']; ?>
-        </p>
-        <?php 
-        // Limpa a mensagem após exibição
-        unset($_SESSION['mensagem']);
-        unset($_SESSION['mensagem_tipo']);
-        ?>
-    <?php endif; ?>
 
     <?php if ($cadastrosExistem): ?>
-        <form method="POST" action="editar_estoque.php">
-            <?php foreach ($estoqueSangue as $tipo => $quantidade): ?>
-                <div>
-                    <label for="tipo_<?php echo $tipo; ?>">Tipo <?php echo $tipo; ?>:</label>
-                    <input type="number" id="tipo_<?php echo $tipo; ?>" name="<?php echo $tipo; ?>" value="<?php echo $quantidade; ?>" min="0" required>
+        <div class="form-container">
+            <h1 id="path5">Editar Estoque de Sangue</h1>
+            <form method="POST" action="">
+                <div class="blood-stock">
+                    <!-- Formulário de edição de estoque, passando os valores via POST -->
+                    <?php foreach ($estoqueSangue as $tipo => $quantidade): ?>
+                        <div class="blood-type">
+                            <label for="tipo_<?php echo $tipo; ?>">Tipo <?php echo $tipo; ?>:</label>
+                            <input type="number" id="tipo_<?php echo $tipo; ?>" name="<?php echo $tipo; ?>" value="<?php echo $quantidade; ?>" min="0" required class="input-field">
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-            <?php endforeach; ?>
 
-            <button type="submit">Atualizar Estoque</button>
-        </form>
+                <button type="submit" id="enviar3">Atualizar Estoque</button>
+            </form>
+        </div>
     <?php else: ?>
-        <p>Nenhum estoque encontrado para edição.</p>
+        <p id="no-data-message">Nenhum estoque encontrado para edição.</p>
     <?php endif; ?>
 
 </body>

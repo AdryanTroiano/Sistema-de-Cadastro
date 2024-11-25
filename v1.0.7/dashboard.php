@@ -18,7 +18,7 @@ if ($cadastrosExistem) {
 
 <!-- Novo painel de dashboard -->
 <div class="dashboard">
-    <h1 class="path3">DASHBOARD</h1>
+    <h1 id="pathdash">DASHBOARD</h1>
     <h2 id="dashboardh2">Estoque de Sangue</h2>
 
     <!-- Mensagem para ausência de cadastros -->
@@ -55,23 +55,40 @@ if ($cadastrosExistem) {
             }
             ?>
         </div>
+        <a id="linkdash" href="?page=editestoque">
+    <button type="button" id="enviar2">Atualizar Estoque</button>
+</a>       
 
     <?php endif; ?>
 </div>
 
 <style>
-.blood-type {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.blood-stock {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos se quebrem para a próxima linha */
+    justify-content: center; /* Alinha os itens ao centro */
+    gap: 2%; /* Espaçamento reduzido entre os elementos (vertical) */
+    margin-bottom: 20px;
 }
 
+.blood-type {
+    width: 22%; /* Largura fixa de 22% para garantir que todos os itens tenham o mesmo tamanho */
+    padding: 8px; /* Ajuste no padding */
+    margin: 0; /* Removido qualquer margem externa */
+    margin-top: 1%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center; /* Centraliza o texto dentro dos itens */
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos no tamanho final */
+}
+
+/* Alerta com fundo vermelho */
 .alert {
     background-color: rgba(255, 0, 0, 0.2); /* Fundo vermelho para alerta */
     color: red;
 }
 
+/* Estoque regular com fundo verde */
 .regular {
     background-color: rgba(0, 255, 0, 0.2); /* Fundo verde para estoque regular */
     color: green;
@@ -98,6 +115,31 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .blood-stock {
+        justify-content: space-evenly; /* Melhor distribuição para telas médias */
+    }
+
+    .blood-type {
+        width: 45%; /* 2 itens por linha em telas médias */
+    }
+}
+
+@media (max-width: 480px) {
+    .blood-stock {
+        justify-content: center; /* Alinha ao centro para telas muito pequenas */
+    }
+
+    .blood-type {
+        width: 90%; /* 1 item por linha em telas muito pequenas */
+    }
+}
+
+
+
+
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

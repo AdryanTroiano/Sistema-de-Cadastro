@@ -384,6 +384,52 @@ button[type="submit"]:hover {
     cursor: pointer;
 }
 
+
+#enviar2 {
+    display: block;
+    margin-top: 2%;
+    margin-left: 3%; /* Alinha ao centro horizontalmente */
+    margin-right: auto; /* Alinha ao centro horizontalmente */
+    padding: 15px 30px; /* Aumenta o padding para deixar o botão mais largo e alto */
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    color: white;
+    background-color: #007BFF; /* Cor de fundo azul */
+    border: none;
+    border-radius: 8px; /* Arredonda as bordas do botão */
+    cursor: pointer;
+    text-align: center;
+    width: auto; /* Deixa o botão com o tamanho ajustado automaticamente */
+    max-width: 300px; /* Garante que o botão não fique excessivamente largo */
+    transition: background-color 0.3s ease; /* Transição suave de cor no hover */
+}
+
+#enviar2:hover {
+    background-color: #0056b3; /* Cor mais escura quando o botão for hover */
+}
+
+@media (max-width: 768px) {
+    #enviar2 {
+        font-size: 16px; /* Reduz o tamanho da fonte em telas menores */
+        padding: 12px 24px; /* Ajusta o padding */
+    }
+}
+
+#linkdash {
+    text-decoration: none;
+}
+
+#enviar3 {
+    display: block;
+    margin-top: 3%;
+    margin-left: 9%;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 #edit {
     background-color: #4CAF50;
 }
@@ -545,6 +591,17 @@ button[type="submit"]:hover {
     text-decoration: underline;
     margin-left: 1%;
     text-align: left;
+}
+
+#path5{
+text-decoration: underline;
+margin-left: 10%;
+margin-bottom: 5%;
+}
+
+#pathdash{
+    text-decoration: underline;
+    margin-bottom: -2%;
 }
 
 .ast{
