@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/11/2024 às 11:46
+-- Tempo de geração: 25/11/2024 às 21:48
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -62,6 +62,31 @@ INSERT INTO `cadastrobs` (`id`, `nome`, `sexo`, `cpf`, `telefone`, `email`, `end
 (11, 'Socorro da Silva', 'M', '184.848.448-48', '(16) 99323-3323', 'socorro@gmail.com', 'Rua Antonio Palópoli', 12, '15901-054', '', 'Vila Sargi', '1978-04-12', 'A-', '2024-11-05'),
 (12, 'JANAINA MAURA TROIANO', 'M', '132.322.131-23', '(16) 99308-9219', 'adryantroian@gmail.com', 'Rua Doutor Joaquim Machado Faro Rolemberg', 37, '15905-020', '', 'Jardim Bela Vista', '2024-11-28', 'O+', '2024-11-06');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `estoque_sangue`
+--
+
+CREATE TABLE `estoque_sangue` (
+  `tipo_sangue` varchar(3) NOT NULL,
+  `quantidade` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `estoque_sangue`
+--
+
+INSERT INTO `estoque_sangue` (`tipo_sangue`, `quantidade`) VALUES
+('A+', 6),
+('A-', 10),
+('AB+', 11),
+('AB-', 12),
+('B+', 4),
+('B-', 2),
+('O+', 20),
+('O-', 1);
+
 --
 -- Índices para tabelas despejadas
 --
@@ -73,6 +98,12 @@ ALTER TABLE `cadastrobs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `estoque_sangue`
+--
+ALTER TABLE `estoque_sangue`
+  ADD PRIMARY KEY (`tipo_sangue`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -80,7 +111,7 @@ ALTER TABLE `cadastrobs`
 -- AUTO_INCREMENT de tabela `cadastrobs`
 --
 ALTER TABLE `cadastrobs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
