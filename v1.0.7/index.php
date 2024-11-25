@@ -30,11 +30,16 @@
                     <li><a class="dropdown-item" href="?page=novo">Cadastrar Doadores</a></li>
                     <li><a class="dropdown-item" href="?page=listar">Listar Doadores</a></li>
                     <li><a class="dropdown-item" href="?page=listar2">Informações Principais</a></li>
+                    
                 </ul>
             </div>
 
             <a class="nav-link" href="?page=help">
                 Ajuda <ion-icon class="icones" name="help-circle-outline"></ion-icon>
+            </a>
+
+            <a class="nav-link" href="?page=editestoque">
+                teste <ion-icon class="icones" name="help-circle-outline"></ion-icon>
             </a>
         </div>
     </nav>
@@ -76,6 +81,9 @@
                         break;
                     case "mapa":
                         include("mapa.php");
+                        break;
+                    case "editestoque":
+                        include("editar_estoque.php");
                         break;
                     default:
                         include("dashboard.php");

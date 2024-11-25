@@ -1,18 +1,17 @@
 <?php
-include('config.php'); // Insira sua conexão com o banco
+include('config.php'); // Inclui a conexão com o banco de dados
 
-// Consulta para buscar a quantidade de bolsas por tipo sanguíneo
-$sql = "SELECT ts, datedonation FROM cadastrobs";
+// Consulta para buscar os tipos sanguíneos e suas respectivas quantidades
+$sql = "SELECT tipo_sangue, quantidade FROM estoque_sangue";
 $result = $conn->query($sql);
 
 $estoqueSangue = [];
-$cadastrosExistem = $result->num_rows > 0; // Verifica se há cadastros
+$cadastrosExistem = $result->num_rows > 0; // Verifica se há registros na tabela
 
 if ($cadastrosExistem) {
-    // Preenche o estoque de sangue
+    // Preenche o array com os tipos sanguíneos e quantidades
     while ($row = $result->fetch_assoc()) {
-        // Preenche o estoque de sangue
-        $estoqueSangue[$row['ts']] = isset($estoqueSangue[$row['ts']]) ? $estoqueSangue[$row['ts']] + 1 : 1;
+        $estoqueSangue[$row['tipo_sangue']] = $row['quantidade'];
     }
 }
 ?>
@@ -161,48 +160,39 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function updateDashboard() {
-        fetch('dashboard_data.php') // URL do arquivo PHP que retorna os dados em JSON
-            .then(response => response.json())
-            .then(data => {
-                console.log("Dados recebidos:", data); // Log para verificar os dados
-                if (!Array.isArray(data) || data.length === 0) {
-                    console.error("Nenhum dado recebido ou dados inválidos.");
-                    errorMessage.style.display = 'block';
-                    return;
-                }
+        // Atualiza os dados diretamente do PHP
+        const estoqueSangue = <?php echo json_encode($estoqueSangue); ?>;
 
-                const estoqueSangue = {};
-                data.forEach(item => {
-                    estoqueSangue[item.tipo] = item.quantidade;
-                });
+        // Verifica se os dados são válidos
+        if (Object.keys(estoqueSangue).length === 0) {
+            console.error("Nenhum dado recebido ou dados inválidos.");
+            errorMessage.style.display = 'block';
+            return;
+        }
 
-                // Atualize os dados do gráfico
-                const quantidades = [
-                    estoqueSangue['A+'] || 0,
-                    estoqueSangue['A-'] || 0,
-                    estoqueSangue['B+'] || 0,
-                    estoqueSangue['B-'] || 0,
-                    estoqueSangue['AB+'] || 0,
-                    estoqueSangue['AB-'] || 0,
-                    estoqueSangue['O+'] || 0,
-                    estoqueSangue['O-'] || 0
-                ];
+        // Monta o array com as quantidades para o gráfico
+        const quantidades = [
+            estoqueSangue['A+'] || 0,
+            estoqueSangue['A-'] || 0,
+            estoqueSangue['B+'] || 0,
+            estoqueSangue['B-'] || 0,
+            estoqueSangue['AB+'] || 0,
+            estoqueSangue['AB-'] || 0,
+            estoqueSangue['O+'] || 0,
+            estoqueSangue['O-'] || 0
+        ];
 
-                console.log("Quantidades para o gráfico:", quantidades);
+        console.log("Quantidades para o gráfico:", quantidades);
 
-                if (bloodStockChart) {
-                    bloodStockChart.data.datasets[0].data = quantidades;
-                    bloodStockChart.update();
-                } else {
-                    initializeChart();
-                    bloodStockChart.data.datasets[0].data = quantidades;
-                    bloodStockChart.update();
-                }
-            })
-            .catch(error => {
-                console.error('Erro ao buscar dados:', error);
-                errorMessage.style.display = 'block';
-            });
+        // Atualiza o gráfico
+        if (bloodStockChart) {
+            bloodStockChart.data.datasets[0].data = quantidades;
+            bloodStockChart.update();
+        } else {
+            initializeChart();
+            bloodStockChart.data.datasets[0].data = quantidades;
+            bloodStockChart.update();
+        }
     }
 
     // Inicializa o dashboard e gráfico imediatamente
