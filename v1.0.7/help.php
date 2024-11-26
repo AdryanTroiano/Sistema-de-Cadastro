@@ -20,7 +20,8 @@
             <li>Clique no <strong>"Logotipo"</strong> e tenha acesso ao <strong>Dashboard e avisos</strong>.</li>
             <li>Quando o aviso estiver <strong>"verde"</strong> significa que o estoque tem mais de 8 bolsa de sangue.
             <li>Quando o aviso estiver <strong>"vermelho"</strong> significa que o estoque está com menos de 8 bolsas de sangue exibindo a mensagem de <strong>"Estoque Baixo"</strong> para chamar atenção e necessidade de uma campanha de doação de sangue.</li>
-            </ul></li><br>
+            <li>Para <strong>editar</strong> a quantidade de bolsas disponíveis, clique no botão <strong>"Atualizar estoque"</strong> ao fim da página</li>
+        </ul></li><br>
         <h3 class="red">Informações</h3>
         <ul>
             <li>Clique no menu <strong>"Informações"</strong> e tenha acesso rápido a lista de informações necessárias que devem ser colhidas do doador.</li>
