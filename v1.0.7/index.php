@@ -18,13 +18,13 @@
         <!-- Container da navbar (links) -->
         <div class="navbar-nav">
             <a class="nav-link" href="?page=info">
-                Informações <ion-icon class="icones" name="information-circle-outline"></ion-icon>
+            <ion-icon class="icones" name="information-circle-outline"></ion-icon> Informações
             </a>
 
             <!-- Menu Doador com submenu -->
             <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Doador <ion-icon class="icones" name="list-circle-outline"></ion-icon>
+                <ion-icon class="icones" name="list-circle-outline"></ion-icon> Doador
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="?page=novo">Cadastrar Doadores</a></li>
@@ -35,7 +35,7 @@
             </div>
 
             <a class="nav-link" href="?page=help">
-                Ajuda <ion-icon class="icones" name="help-circle-outline"></ion-icon>
+            <ion-icon class="icones" name="help-circle-outline"></ion-icon> Ajuda
             </a>
         </div>
     </nav>

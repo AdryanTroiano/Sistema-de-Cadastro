@@ -18,7 +18,7 @@ if ($cadastrosExistem) {
 
 <!-- Novo painel de dashboard -->
 <div class="dashboard">
-    <h1 id="pathdash">DASHBOARD</h1>
+    <h1 id="pathdash">Dashboard</h1>
     <h2 id="dashboardh2">Estoque de Sangue</h2>
 
     <!-- Mensagem para ausência de cadastros -->
