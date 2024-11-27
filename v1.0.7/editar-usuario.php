@@ -18,7 +18,7 @@ if ($res->num_rows > 0) {
     <input type="hidden" name="id" value="<?php print $row->id; ?>">
 
     <div class="container">
-        <h1 class="path">Editar Cadastro</h1>
+        <h1 id="pathedit">Editar Cadastro</h1>
         <br>
         <div class="contentform">
             <div class="form-container">
